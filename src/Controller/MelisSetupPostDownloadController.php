@@ -145,6 +145,6 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
         $message = $this->getTool()->getTranslation('tr_install_setup_message_ko');
         $errors = [];
 
-        return new JsonModel(func_get_args());
+        return new JsonModel(get_defined_vars());
     }
 }
