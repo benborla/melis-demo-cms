@@ -14,6 +14,9 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\JsonModel;
 use Zend\View\Model\ViewModel;
 use Zend\Session\Container;
+use MelisMarketPlace\Support\MelisMarketPlace as MarketPlace;
+use MelisMarketPlace\Support\MelisMarketPlaceCmsTables as Melis;
+use MelisMarketPlace\Support\MelisMarketPlaceSiteInstall as Site;
 
 /**
  * @property bool $showOnMarketplacePostSetup
@@ -25,6 +28,8 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
      * @var bool $showOnMarketplacePostSetup
      */
     public $showOnMarketplacePostSetup = true;
+
+    protected $formConfigPath = 'MelisDemoCms/' . Site::DOWNLOAD . '/' . MarketPlace::FORM . '/melis_demo_cms_setup_download_form';
 
     /**
      * @return \Zend\View\Model\ViewModel
@@ -54,8 +59,7 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
     {
         /** @var \MelisCore\Service\MelisCoreConfigService $config */
         $config = $this->getServiceLocator()->get('MelisCoreConfig');
-        $appConfigForm = $config->getItem('melis_demo_cms_setup/forms/melis_installer_demo_cms');
-
+        $appConfigForm = $config->getItem($this->formConfigPath);
 
         $factory = new \Zend\Form\Factory();
         $formElements = $this->getServiceLocator()->get('FormElementManager');
@@ -121,7 +125,7 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
     {
         /** @var \MelisCore\Service\MelisCoreConfigService $melisMelisCoreConfig */
         $melisMelisCoreConfig = $this->getServiceLocator()->get('MelisCoreConfig');
-        $appConfigForm = $melisMelisCoreConfig->getItem('melis_demo_cms_setup/forms/melis_installer_demo_cms');
+        $appConfigForm = $melisMelisCoreConfig->getItem($this->formConfigPath);
         $appConfigForm = $appConfigForm['elements'];
 
         foreach ($errors as $keyError => $valueError) {
