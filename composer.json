@@ -38,16 +38,14 @@
   },
   "require": {
     "composer/installers": "~1.0",
-    "php": "^7.0",
-    "ext-openssl": "*",
-    "ext-json": "*",
-    "ext-pdo_mysql": "*",
-    "justinrainbow/json-schema": "5.2.1",
-    "melisplatform/melis-engine": "^2.3",
-    "melisplatform/melis-front": "^2.3",
-    "melisplatform/melis-cms-slider": "^2.3",
-    "melisplatform/melis-cms-prospects": "^2.3",
-    "melisplatform/melis-cms-news": "^2.3"
+    "php": "^7.0"
+  },
+  "suggest": {
+    "melisplatform/melis-engine": "MelisEngine provides a set of services and classes to access the CMS pages and data.",
+    "melisplatform/melis-front": "MelisFront is the engine that displays website hosted on Melis Platform.",
+    "melisplatform/melis-cms-slider": "MelisCmsSlider provides a full Slider system for Melis Platform, including templating plugins.",
+    "melisplatform/melis-cms-prospects": "MelisCmsProspects provides a full Prospect system for Melis Platform, including templating plugins.",
+    "melisplatform/melis-cms-news": "Provides a venue for creating and maintaining news posts inside Melis Platform"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.8"
