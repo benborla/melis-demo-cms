@@ -324,6 +324,7 @@ return [
                                 ],
                                 Melis::CMS_PAGE_SEO => [
                                     [
+                                        Melis::PRIMARY_KEY => 'pseo_id',
                                         'pseo_id' => Melis::FOREIGN_KEY,
                                         'pseo_meta_title' => 'Home'
                                     ]
