@@ -53,6 +53,8 @@ return array(
     'tr_melis_installer_tool_site_domain_error_empty' => 'Domain is required',
     'tr_melis_installer_tool_site_scheme_error_empty' => 'Scheme is required',
     'tr_melis_installer_tool_site_name_error_empty' => 'Name is required',
+
+    'tr_install_setup_message_ok' => 'Setup complete',
 );
 
 ?>

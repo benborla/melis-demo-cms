@@ -91,8 +91,16 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
 
         $data = $this->getTool()->sanitizeRecursive($this->params()->fromRoute());
 
-        $success = true;
-        $message = 'tr_install_setup_message_ok';
+        $form = $this->getFormSiteDemo();
+        $form->setData($data);
+
+        if($siteDemoCmsForm->isValid()) {
+            $success = true;
+            $message = 'tr_install_setup_message_ok';
+        }
+        else {
+            $errors = $this->formatErrorMessage($form->getMessages());
+        }
 
         $response = [
             'success' => $success,
@@ -146,7 +154,7 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
     public function submitAction()
     {
         $success = true;
-        $message = $this->getTool()->getTranslation('tr_install_setup_message_ko');
+        $message = $this->getTool()->getTranslation('tr_install_setup_message_ok');
         $errors = [];
 
         return new JsonModel(get_defined_vars());

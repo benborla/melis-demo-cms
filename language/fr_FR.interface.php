@@ -47,5 +47,7 @@ return array(
     'tr_site_demo_cms_tool_site_domain_error_long' => 'Valeur du domaine trop longue, nombre de caractères maximum 50',
     'tr_site_demo_cms_tool_site_domain_error_empty' => 'Veuillez saisir le domaine',
     'tr_site_demo_cms_tool_site_domain_invalid' => 'Veuillez saisir un nom de domaine valide',
+
+    'tr_install_setup_message_ok' => 'Setup complete',
 );
 ?>
