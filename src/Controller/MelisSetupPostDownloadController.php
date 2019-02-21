@@ -89,12 +89,12 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
         $message = 'tr_install_setup_message_ko';
         $errors = [];
 
-        $data = $this->getTool()->sanitizeRecursive($this->params()->fromRoute());
+        $data = $this->getTool()->sanitizeRecursive($this->params()->fromRoute('post', $this->getRequest()->getPost()));
 
         $form = $this->getFormSiteDemo();
         $form->setData($data);
 
-        if($siteDemoCmsForm->isValid()) {
+        if($form->isValid()) {
             $success = true;
             $message = 'tr_install_setup_message_ok';
         }
